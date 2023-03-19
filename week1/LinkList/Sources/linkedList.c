@@ -80,22 +80,17 @@ void printList(ListNode* head) {
 void deleteList(ListNode* head, int index) {
     ListNode* cur = head;
     ListNode* prev = NULL;
-    if (index == 1) { // 要删除的节点是头节点
-        head = head->next;
+    int i = 0;
+    while (cur != NULL && i < index) {
+        prev = cur;
+        cur = cur->next;
+        i++;
     }
-    else {
-        int i = 0;
-        while (cur != NULL && i < index) {
-            prev = cur;
-            cur = cur->next;
-            i++;
-        }
-        if (cur == NULL) {
-            printf("没有要删除的节点");
-            return;
-        }
-        prev->next = cur->next;
+    if (cur == NULL) {
+        printf("没有要删除的节点");
+        return;
     }
+    prev->next = cur->next;
     free(cur);
 }
 
