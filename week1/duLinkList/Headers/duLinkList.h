@@ -30,5 +30,5 @@ void insertBnode(DuLNode* head, int index, int val);
 void insertAnode(DuLNode* head, int index, int val);
 
 //·´×ªÁ´±í
-void reverse(DuLNode* head);
+//void reverse(DuLNode* head);
 
